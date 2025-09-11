@@ -16,6 +16,7 @@ public class FieldCentric {
                 Driver1 = opMode.gamepad1;
                 hardwareMap = opMode.hardwareMap;
                 imu = hardwareMap.get(IMU.class, "imu");
+                //nom
 
                 leftFront = hardwareMap.get(DcMotor.class, "frontLeft");
                 leftBack = hardwareMap.get(DcMotor.class, "backLeft");
