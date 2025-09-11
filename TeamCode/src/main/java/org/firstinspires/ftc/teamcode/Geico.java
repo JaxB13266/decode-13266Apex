@@ -21,7 +21,7 @@ public class Geico {
         hardwareMap = opMode.hardwareMap;
         telemetry = opMode.telemetry;
 
-        Geicowheel = hardwareMap.get(DcMotor.class,"Geicowheel" )
+        Geicowheel = hardwareMap.get(DcMotor.class,"Geicowheel" );
 
     }
 }
