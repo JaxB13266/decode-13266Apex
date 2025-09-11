@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 public class FieldCentric {
     private final DcMotor leftFront,leftBack,rightFront,rightBack;
     private final HardwareMap hardwareMap;
-    private final Gamepad Driver1;
+    private final Gamepad Driver1;//nom
     private final IMU imu;
     double speed= .85;
             public FieldCentric(OpMode opMode) {
