@@ -29,7 +29,7 @@ public class FieldCentric {
         rightBack = hardwareMap.get(DcMotor.class, "backRight");
 
         leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftBack.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftBack.setDirection(DcMotorSimple.Direction.REVERSE );
         rightFront.setDirection(DcMotorSimple.Direction.FORWARD);
         rightBack.setDirection(DcMotorSimple.Direction.FORWARD);
 
