@@ -1,3 +1,4 @@
+/*
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -33,16 +34,14 @@ public class Wheels {
         wheelLeft.setDirection(Servo.Direction.REVERSE);
         wheelRight.setDirection(Servo.Direction.REVERSE);
     }
+
+    public void rightServo(double position) {wheelRight.setPosition(position);}
+    public void leftServo(double position) {wheelLeft.setPosition(position);}
     public void miniWheelsTeleOp() {
-        if (Driver2.b) gearUp();
+        if (Driver2.a) gearUp();
         else gearDown();
 
     }
-    public void rightServo(double position) {
-        wheelRight.setPosition(position);
-    }
-    public void leftServo(double position) {wheelLeft.setPosition(position);}
-
     public void gearUp(){
         rightServo(POWER);
         leftServo(POWER);
@@ -53,3 +52,4 @@ public class Wheels {
     }
 
 }
+*/
