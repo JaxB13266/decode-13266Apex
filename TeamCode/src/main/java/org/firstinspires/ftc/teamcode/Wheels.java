@@ -9,39 +9,40 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-public class Geico {
-    public static double GEICO = 1;
-    public final DcMotor Geicowheel;
+public class Wheels {
+    public final Servo wheelLeft;
+    public final Servo wheelRight;
 
     public final HardwareMap hardwareMap;
     public final Gamepad Driver2;
     public final Gamepad Driver1;
     public final Telemetry telemetry;
-
-
-    public static double POWER = 1;
-
-    public Geico (OpMode opMode) {
+    public static double POWER = .5;
+    public Wheels (OpMode opMode) {
 
         Driver2 = opMode.gamepad2;
         Driver1 = opMode.gamepad1;
         hardwareMap = opMode.hardwareMap;
         telemetry = opMode.telemetry;
 
-        Geicowheel = hardwareMap.get(DcMotor.class,"Geicowheel" );
-        Geicowheel.setDirection(DcMotorSimple.Direction.REVERSE);
-        Geicowheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        wheelLeft = hardwareMap.get(Servo.class,"wheelLeft" );
+        wheelRight = hardwareMap.get(Servo.class,"wheelRight" );
+
+        wheelLeft.setDirection(Servo.Direction.REVERSE);
+        wheelRight.setDirection(Servo.Direction.REVERSE);
     }
-    public void flyWheeelTeleOp() {
-        if (Driver2.a) go();
-        telemetry.addData("wheel position", Geicowheel.getCurrentPosition());
-        telemetry.update();
-    }
-    public void go(){
-        Geicowheel.setPower(POWER);
-    }
-    public  void setPOWER( ) {
-        Geicowheel.setPower(POWER);
+    public void miniWheelsTeleOp() {
+        if (Driver2.b) gearUp();
 
     }
+    public void rightServo(double position) {
+        wheelRight.setPosition(position);
+    }
+    public void leftServo(double position) {wheelLeft.setPosition(position);}
+
+    public void gearUp(){
+        rightServo(POWER);
+        leftServo(POWER);
+    }
+
 }
