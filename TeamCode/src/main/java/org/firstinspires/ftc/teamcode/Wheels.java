@@ -18,6 +18,8 @@ public class Wheels {
     public final Gamepad Driver1;
     public final Telemetry telemetry;
     public static double POWER = .5;
+    public static double NOPOWER = 0;
+
     public Wheels (OpMode opMode) {
 
         Driver2 = opMode.gamepad2;
@@ -33,6 +35,7 @@ public class Wheels {
     }
     public void miniWheelsTeleOp() {
         if (Driver2.b) gearUp();
+        else gearDown();
 
     }
     public void rightServo(double position) {
@@ -43,6 +46,10 @@ public class Wheels {
     public void gearUp(){
         rightServo(POWER);
         leftServo(POWER);
+    }
+    public void gearDown(){
+        rightServo(NOPOWER);
+        leftServo(NOPOWER);
     }
 
 }

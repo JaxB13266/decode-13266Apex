@@ -20,6 +20,8 @@ public class Geico {
 
 
     public static double POWER = 1;
+    public static double NOPOWER = 0;
+
 
     public Geico (OpMode opMode) {
 
@@ -34,11 +36,15 @@ public class Geico {
     }
     public void flyWheeelTeleOp() {
         if (Driver2.a) go();
+        else stop();
         telemetry.addData("wheel position", Geicowheel.getCurrentPosition());
         telemetry.update();
     }
     public void go(){
         Geicowheel.setPower(POWER);
+    }
+    public void stop(){
+        Geicowheel.setPower(NOPOWER);
     }
     public  void setPOWER( ) {
         Geicowheel.setPower(POWER);
