@@ -51,4 +51,4 @@ public class Autos extends LinearOpMode {
         rightBack.setPower(0);
 
     }
-}
+}//note
