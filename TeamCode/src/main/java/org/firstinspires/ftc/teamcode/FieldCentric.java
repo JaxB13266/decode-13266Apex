@@ -28,10 +28,10 @@ public class FieldCentric {
         rightFront = hardwareMap.get(DcMotor.class, "frontRight");
         rightBack = hardwareMap.get(DcMotor.class, "backRight");
 
-        leftFront.setDirection(DcMotorSimple.Direction.FORWARD);
-        leftBack.setDirection(DcMotorSimple.Direction.REVERSE);
-        rightFront.setDirection(DcMotorSimple.Direction.FORWARD);
-        rightBack.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftBack.setDirection(DcMotorSimple.Direction.FORWARD);
+        rightFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightBack.setDirection(DcMotorSimple.Direction.FORWARD);
 
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -50,9 +50,9 @@ public class FieldCentric {
     }
 
     public void fieldCentric() {
-        double y = -Driver1.left_stick_y;
-        double x = Driver1.left_stick_x;
-        double rx = Driver1.right_stick_x;
+        double y = Driver1.left_stick_x;
+        double x = -Driver1.left_stick_y;
+        double rx = -Driver1.right_stick_x;
 
         if (Driver1.start) {
             imu.resetYaw();

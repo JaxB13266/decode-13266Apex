@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.internal.camera.delegating.DelegatingCaptureSequence;
 
 public class Geico {
     public final DcMotor Geicowheel;
@@ -20,7 +21,7 @@ public class Geico {
     public final Telemetry telemetry;
 
 
-    public static double POWER = 1;
+    public static double POWER = .5;
     public static double NOPOWER = 0;
 
 
@@ -48,14 +49,25 @@ public class Geico {
         telemetry.addData("wheel position", Geicowheel.getCurrentPosition());
         telemetry.update();
     }
+    public void GeckoWheel() {
+        if (Driver2.b){
+            Geicowheel.setPower(POWER);
+        }
+        else {
+            Geicowheel.setPower(NOPOWER);
+        }
+    }
     public void go(){
 
         Geicowheel.setPower(POWER);
         wheelRight.setPower(POWER);
+        wheelLeft.setPower(POWER);
     }
     public void stop(){
 
         Geicowheel.setPower(NOPOWER);
+        wheelRight.setPower(NOPOWER);
+        wheelLeft.setPower(NOPOWER);
 
     }
     public  void setPOWER( ) {
