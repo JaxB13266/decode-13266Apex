@@ -52,7 +52,7 @@ public class FieldCentric {
     public void fieldCentric() {
         double y = Driver1.left_stick_x;
         double x = -Driver1.left_stick_y;
-        double rx = -Driver1.right_stick_x;
+        double rx = Driver1.right_stick_x;
 
         if (Driver1.start) {
             imu.resetYaw();
@@ -67,8 +67,8 @@ public class FieldCentric {
 
         double denominator = Math.max(Math.abs(rotY) + Math.abs(rotX) + Math.abs(rx), 1);
         double frontLeft = (rotY + rotX + rx) / denominator * speed;
-        double backLeft = (rotY - rotX + rx) / denominator* speed;
-        double frontRight = (rotY - rotX - rx) / denominator* speed;
+        double backLeft = (rotY - rotX - rx) / denominator* speed;
+        double frontRight = (rotY - rotX + rx) / denominator* speed;
         double backRight = (rotY + rotX - rx) / denominator* speed;
 
         leftFront.setPower(frontLeft);
