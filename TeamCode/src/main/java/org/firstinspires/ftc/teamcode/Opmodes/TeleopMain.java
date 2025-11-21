@@ -1,7 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.teamcode.Drive.FieldCentric;
+import org.firstinspires.ftc.teamcode.Subsystems.Geico;
 
 @TeleOp
 public class TeleopMain extends LinearOpMode {
@@ -9,13 +12,11 @@ public class TeleopMain extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         FieldCentric fieldCentricDrive = new FieldCentric(this);
         Geico geico = new Geico(this);
-        //Wheels wheels = new Wheels(this);
         waitForStart();
         while (opModeIsActive()) {
             fieldCentricDrive.fieldCentric();
             geico.flyWheeelTeleOp();
-           // wheels.miniWheelsTeleOp();
     }
-}
+   }
 
 }
