@@ -36,6 +36,13 @@ public class Geico {
         telemetry.addData("wheel position", Geicowheel.getCurrentPosition());
         telemetry.update();
     }
+    public void flyWheelSoloTeleOp(){
+        if (Driver1.a) forward();
+        else if (Driver1.b) back();
+        else stop();
+        telemetry.addData("wheel position", Geicowheel.getCurrentPosition());
+        telemetry.update();
+    }
     public void forward(){
         Geicowheel.setPower(POWER);
     }

@@ -34,6 +34,13 @@ public class Intake {
         telemetry.addData("intake position", IntakeWheel.getCurrentPosition());
         telemetry.update();
     }
+    public void IntakeTeleOpSolo() {
+        if (Driver1.dpad_up) in();
+        else if (Driver1.dpad_down) out();
+        else stop();
+        telemetry.addData("intake position", IntakeWheel.getCurrentPosition());
+        telemetry.update();
+    }
     public void in(){
         IntakeWheel.setPower(POWER);
     }
