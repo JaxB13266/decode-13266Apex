@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 
-public class FieldCentric {
+public class FieldCentric {//nom nom
     private final DcMotor leftFront,leftBack,rightFront,rightBack;
     private final HardwareMap hardwareMap;
     private final Gamepad Driver1;
@@ -37,7 +37,7 @@ public class FieldCentric {
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
+//nom
 
         //SET UP HUB POSITION
         IMU imu = hardwareMap.get(IMU.class, "imu");
@@ -56,7 +56,7 @@ public class FieldCentric {
 
         if (Driver1.start) {
             imu.resetYaw();
-        }
+        }//nom nom
 
         double botHeading = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS);
 
