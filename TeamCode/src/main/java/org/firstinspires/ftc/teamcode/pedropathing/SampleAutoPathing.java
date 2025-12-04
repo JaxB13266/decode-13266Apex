@@ -1,4 +1,5 @@
-lspackage org.firstinspires.ftc.teamcode.pedropathing;
+package org.firstinspires.ftc.teamcode.pedropathing;
+
 
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.BezierLine;
@@ -12,7 +13,7 @@ import org.firstinspires.ftc.teamcode.pedropathing.Constants;
 
 
 @Autonomous
-class    SetAutoPathing extends OpMode {
+class    SampleAutoPathing extends OpMode {
 
     private Follower follower;
     private Timer pathTimer, opModeTimer;
