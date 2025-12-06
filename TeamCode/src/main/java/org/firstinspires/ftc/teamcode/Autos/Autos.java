@@ -37,10 +37,10 @@ public class Autos extends LinearOpMode {
         waitForStart();
 
         // Drive forward for 2 seconds
-        leftBack.setPower(0.5);
-        leftFront.setPower(0.5);
-        rightBack.setPower(0.5);
-        rightFront.setPower(0.5);
+        leftBack.setPower(0.2);
+        leftFront.setPower(0.2);
+        rightBack.setPower(0.2);
+        rightFront.setPower(0.2);
 
         sleep(2000);
 

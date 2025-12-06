@@ -1,3 +1,4 @@
+/*
 package org.firstinspires.ftc.teamcode.pedropathing;
 
 
@@ -113,3 +114,4 @@ class    SampleAutoPathing extends OpMode {
 
 
 }
+*/
