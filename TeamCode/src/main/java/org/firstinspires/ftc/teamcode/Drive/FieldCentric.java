@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 
-public class FieldCentric {//nom nom
+public class FieldCentric {
     private final DcMotor leftFront,leftBack,rightFront,rightBack;
     private final HardwareMap hardwareMap;
     private final Gamepad Driver1;
@@ -29,15 +29,15 @@ public class FieldCentric {//nom nom
         rightBack = hardwareMap.get(DcMotor.class, "backRight");
 
         leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftBack.setDirection(DcMotorSimple.Direction.FORWARD);
-        rightFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftBack.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightFront.setDirection(DcMotorSimple.Direction.FORWARD);
         rightBack.setDirection(DcMotorSimple.Direction.FORWARD);
 
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-//nom
+
 
         //SET UP HUB POSITION
         IMU imu = hardwareMap.get(IMU.class, "imu");
@@ -49,14 +49,14 @@ public class FieldCentric {//nom nom
 
     }
 
-    public void fieldCentric() {
-        double y = Driver1.left_stick_x;
-        double x = -Driver1.left_stick_y;
+    public void fieldCentricDrive() {
+        double y = -Driver1.left_stick_y;
+        double x = Driver1.left_stick_x;
         double rx = Driver1.right_stick_x;
 
         if (Driver1.start) {
             imu.resetYaw();
-        }//nom nom
+        }
 
         double botHeading = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS);
 
@@ -67,9 +67,9 @@ public class FieldCentric {//nom nom
 
         double denominator = Math.max(Math.abs(rotY) + Math.abs(rotX) + Math.abs(rx), 1);
         double frontLeft = (rotY + rotX + rx) / denominator * speed;
-        double backLeft = (rotY - rotX - rx) / denominator* speed;
-        double frontRight = (rotY - rotX + rx) / denominator* speed;
-        double backRight = (rotY + rotX - rx) / denominator* speed;
+        double backLeft = (rotY - rotX + rx) / denominator* speed;
+        double frontRight = (rotY + rotX - rx) / denominator* speed;
+        double backRight = (rotY -      rotX - rx) / denominator* speed;
 
         leftFront.setPower(frontLeft);
         leftBack.setPower(backLeft);
@@ -77,3 +77,4 @@ public class FieldCentric {//nom nom
         rightBack.setPower(backRight);
     }
 }
+

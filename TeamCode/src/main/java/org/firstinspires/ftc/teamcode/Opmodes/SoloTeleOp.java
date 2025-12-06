@@ -15,7 +15,7 @@ public class SoloTeleOp extends LinearOpMode {
         Intake intake = new Intake(this);
         waitForStart();
         while (opModeIsActive()) {
-            fieldCentricDrive.fieldCentric();
+            fieldCentricDrive.fieldCentricDrive();
             geico.flyWheelSoloTeleOp();
             intake.IntakeTeleOpSolo();
         }

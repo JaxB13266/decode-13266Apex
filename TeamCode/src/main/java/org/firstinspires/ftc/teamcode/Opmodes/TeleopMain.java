@@ -16,7 +16,7 @@ public class TeleopMain extends LinearOpMode {
         Intake intake = new Intake(this);
         waitForStart();
         while (opModeIsActive()) {
-            fieldCentricDrive.fieldCentric();
+            fieldCentricDrive.fieldCentricDrive();
             geico.flyWheeelTeleOp();
             intake.IntakeTeleOp();
     }
