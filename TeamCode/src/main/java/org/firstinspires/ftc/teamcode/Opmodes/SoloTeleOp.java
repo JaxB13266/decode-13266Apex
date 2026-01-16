@@ -3,6 +3,10 @@ package org.firstinspires.ftc.teamcode.Opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.teamcode.Drive.FieldCentric;
+import org.firstinspires.ftc.teamcode.Substystems.Geico;
+import org.firstinspires.ftc.teamcode.Substystems.Intake;
+
 
 @TeleOp
 public class SoloTeleOp extends LinearOpMode {
